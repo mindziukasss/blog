@@ -1,18 +1,31 @@
-<% @posts.each_slice(3) do |post| %>
-  <div class="row">
-    <% @posts.each do |post| %>
-      <div class="col-md-4">
-        <div class="post">
-          <div class="image_wrapper">
-            <%= link_to post do %>
-              <%= image_tag post.image.url(:medium) %>
-            <% end %>
-          </div>
+<div id="posts">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <div class="post_image">
+        <%= link_to (image_tag post.image.url(:medium)), post %>
+      </div>
+      <div class="post_content">
+        <div class="title">
           <h2>
             <%= link_to post.title, post %>
           </h2>
         </div>
+        <div class="data clearfix">
+          <p class="username">
+           
+          </p>
+          <p class="buttons">
+            <span>
+              <i class="fa fa-comments-o"></i>
+              
+            </span>
+            <span>
+              <i class="fa fa-thumbs-o-up"></i>
+        
+            </span>
+          </p>
+        </div>
       </div>
-    <% end %>
-  </div>
-<% end %>
+    </div>
+  <% end %>
+</div>
